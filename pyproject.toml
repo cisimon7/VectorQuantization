@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "equinox-vqgan"
+version = "0.1.0"
+description = "Modular, memory-conscious VQVAE and VQGAN training in JAX and Equinox"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["jax>=0.6.2,<0.10", "equinox>=0.13,<0.14", "optax>=0.2.5,<0.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.11", "pillow>=11,<13", "reportlab>=4,<5", "scipy>=1.13"]
+data = ["pillow>=11,<13", "reportlab>=4,<5", "scipy>=1.13"]
+metrics = ["torch>=2.7", "torchvision>=0.22", "torchmetrics[image]>=1.7,<2"]
+perceptual = ["jaxlpips==1.2.0", "flax==0.12.5"]
+
+[tool.hatch.build]
+exclude = ["data_processing/dataset.local.json", "data_processing/previews/**"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vqgan", "data_processing"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

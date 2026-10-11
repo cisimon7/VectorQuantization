@@ -1,0 +1,36 @@
+{
+  "split": "test",
+  "dataset_dir": "/media/cisimon7/USB/datasets/oxford_flowers102/processed/128_seed0",
+  "num_images": 802,
+  "seed": 0,
+  "kid_subsets": 50,
+  "kid_subset_size": 100,
+  "models": {
+    "vqvae": {
+      "checkpoint": "/media/cisimon7/USB/datasets/oxford_flowers102/checkpoints/flowers-vqvae.eqx",
+      "step": 10000,
+      "l1": 0.12636177997079276,
+      "mse": 0.033446949518789675,
+      "psnr": 21.237955532169103,
+      "num_images": 802,
+      "ssim": 0.5316123962402344,
+      "lpips_alex": 0.36752116680145264,
+      "rfid": 108.70249938964844,
+      "kid_mean": 0.08460311591625214,
+      "kid_std": 0.006988780107349157
+    },
+    "vqgan": {
+      "checkpoint": "/media/cisimon7/USB/datasets/oxford_flowers102/checkpoints/flowers-vqgan.eqx",
+      "step": 10000,
+      "l1": 0.21958729529990223,
+      "mse": 0.08659209689575983,
+      "psnr": 16.805019677131252,
+      "num_images": 802,
+      "ssim": 0.2669609785079956,
+      "lpips_alex": 0.4381449818611145,
+      "rfid": 203.35086059570312,
+      "kid_mean": 0.19155193865299225,
+      "kid_std": 0.006352575961500406
+    }
+  }
+}

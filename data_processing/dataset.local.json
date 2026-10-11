@@ -1,0 +1,5 @@
+{
+  "root": "/Volumes/PortableSSD/datasets/oxford_flowers102",
+  "image_size": 128,
+  "seed": 0
+}
