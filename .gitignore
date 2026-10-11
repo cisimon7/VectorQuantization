@@ -8,4 +8,5 @@ venv/
 data/
 .ruff_cache/
 .pytest_cache/
-data_processing/previews/
+data_processing/previews/*
+!data_processing/previews/comparison-all-models-30k.png
